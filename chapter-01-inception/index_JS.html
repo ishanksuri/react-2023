@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaste</title>
+  </head>
+  <body>
+    <!-- step0.1, step0.2, step0.3,   -->
+    <!-- hellow world using heading -->
+    <!-- <div id="root">
+         step1,2,3,4 
+      <h1>Hello World!</h1>
+    </div> -->
+    <!-- <div id="root"></div> -->
+    <script>
+      //Step 0.1: creating div Elementusing JS
+      const div = document.createElement('div');
+      //Step 0.2: setting id to div tag
+      div.setAttribute('id', 'root');
+      //Step 0.3: Inserting div as child inside the body tag
+      document.body.appendChild(div);
+
+      //Step1: to create h1 tag & assign it to the variable
+      const heading = document.createElement('h1');
+      //Step2: insert a string inside the h1 tag created above
+      heading.innerHTML = 'Hello world!';
+      //step3: We have to put h1 tag created with string inside the div with id = "root"
+      //thats why before doing that first getting element by id to get reference of div tag
+      const root = document.getElementById('root');
+      //step4: We have to put h1 tag created with string as a child inside the div(id = "root")
+      root.appendChild(heading);
+    </script>
+  </body>
+</html>

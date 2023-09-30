@@ -1,0 +1,20 @@
+{
+  "name": "chapter-01-inception",
+  "version": "1.0.0",
+  "description": "This is Namaste React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishanksuri/react-2023.git"
+  },
+  "keywords": [],
+  "author": "Akshay Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ishanksuri/react-2023/issues"
+  },
+  "homepage": "https://github.com/ishanksuri/react-2023#readme"
+}

@@ -8,14 +8,20 @@
 //     </div>
 //   );
 // };
-
 // export default User;
+
+import { useState } from "react";
 
 //function based component
 //using props but destructuring also
 const User = ({ name }) => {
+  //state variable inside the functional component
+  const [count] = useState(0);
+  const [count2] = useState(1);
   return (
     <div className="user-card">
+      <h1>Count = {count}</h1>
+      <h1>Count2 = {count2}</h1>
       <h2>Name: {name}</h2>
       <h3>Location: Dehradun</h3>
       <h4>Contact: @akshaymarch7</h4>

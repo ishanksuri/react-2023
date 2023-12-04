@@ -16,7 +16,7 @@ import { useState } from "react";
 //using props but destructuring also
 const User = ({ name }) => {
   //state variable inside the functional component
-  const [count] = useState(0);
+  const [count, setCount] = useState(0);
   const [count2] = useState(1);
   return (
     <div className="user-card">

@@ -27,7 +27,7 @@ const Header = () => {
   //Type3
   //if dependency array is [btnNameReact], then useEffect is called everytime btnNameReact is updated
   useEffect(() => {
-    console.log("useEffect called");
+    // console.log("useEffect called");
   }, [btnNameReact]);
 
   return (

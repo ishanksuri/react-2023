@@ -10,7 +10,7 @@ class UserClass extends React.Component {
   // In addition, the super() keyword can be used to pass props to the parent class
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // creating State variable in class based component
     // this.state is a big object which will contain all the state variables (inside the single object )
@@ -20,7 +20,7 @@ class UserClass extends React.Component {
     };
 
     //When the class loads for the first time, first constructor is called then render is called.
-    console.log("Constructor");
+    console.log("Child Constructor( Third call )");
   }
 
   render() {
@@ -31,7 +31,7 @@ class UserClass extends React.Component {
     const { count, count2 } = this.state;
 
     //render is called
-    console.log("render");
+    console.log("Child Render( Fourth call ) ");
     return (
       <div className="user-card">
         {/* how to use props in class based component without destructuring */}

@@ -7,10 +7,10 @@ class About extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("Parent Constructor( first it will be called)");
+    // console.log("Parent Constructor( first it will be called)");
   }
   render() {
-    console.log("Parent Render( second call )");
+    // console.log("Parent Render( second call )");
     return (
       <div>
         <h1>About</h1>

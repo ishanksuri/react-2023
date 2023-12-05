@@ -23,6 +23,11 @@ class UserClass extends React.Component {
     console.log("Child Constructor( Third call )");
   }
 
+  //componentDidMount is called after this class component is mounted onto the webpage
+  componentDidMount() {
+    console.log("Child Component did mount");
+  }
+
   render() {
     //Destructuring props
     const { name, location } = this.props;

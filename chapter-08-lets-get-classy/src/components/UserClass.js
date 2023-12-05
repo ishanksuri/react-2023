@@ -20,12 +20,12 @@ class UserClass extends React.Component {
     };
 
     //When the class loads for the first time, first constructor is called then render is called.
-    console.log("Child Constructor( Third call )");
+    console.log("Child Constructor( 3rd call )");
   }
 
   //componentDidMount is called after this class component is mounted onto the webpage
   componentDidMount() {
-    console.log("Child Component did mount");
+    console.log("Child ComponentDidMount(5th call)");
   }
 
   render() {
@@ -36,7 +36,7 @@ class UserClass extends React.Component {
     const { count, count2 } = this.state;
 
     //render is called
-    console.log("Child Render( Fourth call ) ");
+    console.log("Child Render( 4th call ) ");
     return (
       <div className="user-card">
         {/* how to use props in class based component without destructuring */}

@@ -17,6 +17,11 @@ class UserClass extends React.Component {
     this.state = {
       // count: 0,
       // count2: 2,
+      //state variable needs to be initialised with initial/dummy data just like functional component
+      userInfo: {
+        name: "Dummy",
+        location: "Default",
+      },
     };
 
     //When the class loads for the first time, first constructor is called then render is called.
@@ -28,18 +33,26 @@ class UserClass extends React.Component {
     // console.log(this.props.name + "Child ComponentDidMount()");
     const data = await fetch("https://api.github.com/users/ishanksuri");
     const jsonData = await data.json();
+
+    //UPDATING state variable with jsonDATA which came from github live API call
+    this.setState({
+      userInfo: jsonData,
+    });
+
     console.log(jsonData);
   }
 
   render() {
     //Destructuring props
-    const { name, location } = this.props;
+    // const { name, location } = this.props;
 
     //Destructuring state variable
     // const { count, count2 } = this.state;
 
     //render is called
     // console.log(name + "Child Render() ");
+
+    const { name, location, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">
         {/* how to use props in class based component without destructuring */}
@@ -70,6 +83,7 @@ class UserClass extends React.Component {
           Count Increase
         </button>
         <h1>Count2 = {count2}</h1> */}
+        <img src={avatar_url} />
         <h2>Name: {name} </h2>
         <h3>Location: {location}</h3>
         <h4>Contact: @ishank</h4>

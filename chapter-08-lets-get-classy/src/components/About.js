@@ -7,15 +7,15 @@ class About extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("Parent Constructor( 1st call )");
+    // console.log("Parent Constructor( 1st call )");
   }
 
   componentDidMount() {
-    console.log("Parent ComponentDidMount( last call )");
+    // console.log("Parent ComponentDidMount( last call )");
   }
 
   render() {
-    console.log("Parent Render( 2nd call )");
+    // console.log("Parent Render( 2nd call )");
     return (
       <div>
         <h1>About</h1>
@@ -23,7 +23,7 @@ class About extends React.Component {
         {/* <User name={"Akshay Saini (function)"} /> */}
 
         <UserClass name={"First "} location={"Saharanpur (class)"} />
-        <UserClass name={"Second "} location={"Doon (class)"} />
+        {/* <UserClass name={"Second "} location={"Doon (class)"} /> */}
       </div>
     );
   }

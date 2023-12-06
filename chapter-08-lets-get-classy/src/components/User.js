@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 //using props
 // const User = (props) => {
 //   return (
@@ -10,14 +12,20 @@
 // };
 // export default User;
 
-import { useState } from "react";
-
 //function based component
 //using props but destructuring also
 const User = ({ name }) => {
   //state variable inside the functional component
   const [count, setCount] = useState(0);
   const [count2] = useState(1);
+
+  useEffect(() => {
+    //Api calls
+    // async function getUserInfo(){
+    //   const data = await fetch
+    // }
+  }, []);
+
   return (
     <div className="user-card">
       <h1>Count = {count}</h1>

@@ -15,17 +15,20 @@ class UserClass extends React.Component {
     // creating State variable in class based component
     // this.state is a big object which will contain all the state variables (inside the single object )
     this.state = {
-      count: 0,
-      count2: 2,
+      // count: 0,
+      // count2: 2,
     };
 
     //When the class loads for the first time, first constructor is called then render is called.
-    console.log(this.props.name + "Child Constructor()");
+    // console.log(this.props.name + "Child Constructor()");
   }
 
   //componentDidMount is called after this class component is mounted onto the webpage
-  componentDidMount() {
-    console.log(this.props.name + "Child ComponentDidMount()");
+  async componentDidMount() {
+    // console.log(this.props.name + "Child ComponentDidMount()");
+    const data = await fetch("https://api.github.com/users/ishanksuri");
+    const jsonData = await data.json();
+    console.log(jsonData);
   }
 
   render() {
@@ -33,10 +36,10 @@ class UserClass extends React.Component {
     const { name, location } = this.props;
 
     //Destructuring state variable
-    const { count, count2 } = this.state;
+    // const { count, count2 } = this.state;
 
     //render is called
-    console.log(name + "Child Render() ");
+    // console.log(name + "Child Render() ");
     return (
       <div className="user-card">
         {/* how to use props in class based component without destructuring */}
@@ -46,7 +49,7 @@ class UserClass extends React.Component {
         {/* <h1>Count = {this.state.count} </h1> */}
         {/* <h1>Count = {this.state.count2} </h1> */}
 
-        <h1>Count = {count}</h1>
+        {/* <h1>Count = {count}</h1>
         <button
           onClick={() => {
             // NEVER UPDATE STATE VARIABLES DIRECTLY
@@ -66,7 +69,7 @@ class UserClass extends React.Component {
         >
           Count Increase
         </button>
-        <h1>Count2 = {count2}</h1>
+        <h1>Count2 = {count2}</h1> */}
         <h2>Name: {name} </h2>
         <h3>Location: {location}</h3>
         <h4>Contact: @ishank</h4>

@@ -25,12 +25,12 @@ class UserClass extends React.Component {
     };
 
     //When the class loads for the first time, first constructor is called then render is called.
-    // console.log(this.props.name + "Child Constructor()");
+    console.log(this.props.name + "Child Constructor()");
   }
 
   //componentDidMount is called after this class component is mounted onto the webpage
   async componentDidMount() {
-    // console.log(this.props.name + "Child ComponentDidMount()");
+    console.log(this.props.name + "Child ComponentDidMount()");
     const data = await fetch("https://api.github.com/users/ishanksuri");
     const jsonData = await data.json();
 
@@ -38,8 +38,21 @@ class UserClass extends React.Component {
     this.setState({
       userInfo: jsonData,
     });
+    console.log(
+      "-----setState() initialised UPDATING CYCLE with updated API data----"
+    );
 
     console.log(jsonData);
+  }
+
+  //---called at the end of UPDATING CYCLE---
+  componentDidUpdate() {
+    console.log(this.props.name + "child ComponentDidUpdate");
+  }
+
+  //this function is called just before a component is UNMOUNTING---
+  componentWillUnmount() {
+    console.log(this.props.name + "child componentWillUnmount");
   }
 
   render() {
@@ -50,9 +63,10 @@ class UserClass extends React.Component {
     // const { count, count2 } = this.state;
 
     //render is called
-    // console.log(name + "Child Render() ");
+    console.log(this.props.name + "Child Render() ");
 
     const { name, location, avatar_url } = this.state.userInfo;
+    // debugger;
     return (
       <div className="user-card">
         {/* how to use props in class based component without destructuring */}

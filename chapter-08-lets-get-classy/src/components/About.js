@@ -7,15 +7,26 @@ class About extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      count: 0,
+    };
+
     // console.log("Parent Constructor( 1st call )");
   }
 
-  componentDidMount() {
-    // console.log("Parent ComponentDidMount( last call )");
-  }
+  // componentDidMount() {
+  //   console.log("Parent ComponentDidMount()");
+  //   this.setState({
+  //     count: this.setState + 1,
+  //   });
+  // }
+
+  // componentDidUpdate() {
+  //   console.log("Parent componentDidUpdate()");
+  // }
 
   render() {
-    // console.log("Parent Render( 2nd call )");
+    // console.log("Parent Render()");
     return (
       <div>
         <h1>About</h1>

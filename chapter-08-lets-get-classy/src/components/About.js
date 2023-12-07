@@ -11,22 +11,29 @@ class About extends React.Component {
       count: 0,
     };
 
-    // console.log("Parent Constructor( 1st call )");
+    console.log("Parent Constructor( 1st call )");
   }
 
-  // componentDidMount() {
-  //   console.log("Parent ComponentDidMount()");
-  //   this.setState({
-  //     count: this.setState + 1,
-  //   });
-  // }
+  componentDidMount() {
+    console.log("Parent ComponentDidMount()");
+    this.setState({
+      count: this.setState + 1,
+    });
+    console.log(
+      "--PARENT--setState() inside DidMount initialised UPDATING in Parent"
+    );
+  }
 
-  // componentDidUpdate() {
-  //   console.log("Parent componentDidUpdate()");
-  // }
+  componentDidUpdate() {
+    console.log("Parent componentDidUpdate()");
+  }
+
+  componentWillUnmount() {
+    console.log(" Parent componentWillUnmount()");
+  }
 
   render() {
-    // console.log("Parent Render()");
+    console.log("Parent Render()");
     return (
       <div>
         <h1>About</h1>

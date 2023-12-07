@@ -39,7 +39,8 @@ class UserClass extends React.Component {
       userInfo: jsonData,
     });
     console.log(
-      "-----setState() initialised UPDATING CYCLE with updated API data----"
+      this.props.name +
+        "-----CHILD---setState() inside DidMount initialised UPDATING CYCLE with updated API data----"
     );
 
     console.log(jsonData);

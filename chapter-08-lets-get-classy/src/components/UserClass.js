@@ -53,7 +53,7 @@ class UserClass extends React.Component {
 
   //this function is called just before a component is UNMOUNTING---
   componentWillUnmount() {
-    console.log(this.props.name + "child componentWillUnmount");
+    console.log(this.props.name + "child  componentWillUnmount");
   }
 
   render() {

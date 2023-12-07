@@ -29,7 +29,7 @@ class About extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log(" Parent componentWillUnmount()");
+    console.log(" Parent  componentWillUnmount()");
   }
 
   render() {

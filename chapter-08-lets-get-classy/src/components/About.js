@@ -11,11 +11,11 @@ class About extends React.Component {
       count: 0,
     };
 
-    console.log("Parent Constructor( 1st call )");
+    // console.log("Parent Constructor( 1st call )");
   }
 
   componentDidMount() {
-    console.log("Parent ComponentDidMount()");
+    // console.log("Parent ComponentDidMount()");
     this.setState({
       count: this.setState + 1,
     });
@@ -25,11 +25,11 @@ class About extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("Parent componentDidUpdate()");
+    // console.log("Parent componentDidUpdate()");
   }
 
   componentWillUnmount() {
-    console.log(" Parent  componentWillUnmount()");
+    // console.log(" Parent  componentWillUnmount()");
   }
 
   render() {

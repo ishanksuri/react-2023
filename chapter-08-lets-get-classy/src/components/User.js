@@ -24,6 +24,10 @@ const User = ({ name }) => {
     // async function getUserInfo(){
     //   const data = await fetch
     // }
+
+    setInterval(() => {
+      console.log("NAMASTE REACT OP");
+    }, 1000);
   }, []);
 
   return (

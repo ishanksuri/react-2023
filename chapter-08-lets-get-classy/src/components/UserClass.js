@@ -48,7 +48,7 @@ class UserClass extends React.Component {
 
   //PART2: showing CONS of SPA application
   componentDidMount() {
-    setInterval(() => {
+    this.timer = setInterval(() => {
       console.log("NAMASTE REACT OP");
     }, 1000);
   }
@@ -60,6 +60,7 @@ class UserClass extends React.Component {
 
   //this function is called just before a component is UNMOUNTING---
   componentWillUnmount() {
+    clearInterval(this.timer);
     console.log(this.props.name + "child  componentWillUnmount");
   }
 

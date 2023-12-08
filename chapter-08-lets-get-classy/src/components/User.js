@@ -24,11 +24,20 @@ const User = ({ name }) => {
     // async function getUserInfo(){
     //   const data = await fetch
     // }
+    console.log("useEffect");
 
-    setInterval(() => {
+    const timer = setInterval(() => {
       console.log("NAMASTE REACT OP");
     }, 1000);
+
+    //you can return the function in useEffect and it is called when you want to Unmount a function in useEffect
+    return () => {
+      clearInterval(timer);
+      console.log("useEffect return(unmounting)");
+    };
   }, []);
+
+  console.log("Functional Child render()");
 
   return (
     <div className="user-card">

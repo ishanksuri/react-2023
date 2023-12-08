@@ -16,12 +16,12 @@ class About extends React.Component {
 
   componentDidMount() {
     // console.log("Parent ComponentDidMount()");
-    this.setState({
-      count: this.setState + 1,
-    });
-    console.log(
-      "--PARENT--setState() inside DidMount initialised UPDATING in Parent"
-    );
+    // this.setState({
+    //   count: this.setState + 1,
+    // });
+    // console.log(
+    //   "--PARENT--setState() inside DidMount initialised UPDATING in Parent"
+    // );
   }
 
   componentDidUpdate() {

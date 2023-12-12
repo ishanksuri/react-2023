@@ -65,6 +65,10 @@ Two Types of Export/Import
 -useState() -80% of time you'll be using this
 -useEffect() -19% of time you'll be using this
 
+otherHooks
+-useRouteError
+-useParams
+
 - 1% of time you'll be using other react hooks
 
 # 2 types of Routing in web Apps

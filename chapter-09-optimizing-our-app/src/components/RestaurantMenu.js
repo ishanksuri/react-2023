@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
   //using state variable to dynamically the data on UI
   //1st Api call will be made using useEffect, then 2nd that data will be stored in state variable
   // & whenever my state variable updates, it will automatically update the UI
 
+  //does not have to manage its own state, since we have created useRestaurantMenu
   //intially, resInfo is null
-  const [resInfo, setResInfo] = useState(null);
+  // const [resInfo, setResInfo] = useState(null);
 
   //params is the object with the resId
   // const params = useParams();
@@ -19,18 +20,21 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   console.log(resId);
 
+  //part1: converting this part of functionality into a custome hook
   //fetchMenu will be called once only after intial render as it has empty dependency array
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  // useEffect(() => {
+  //   fetchMenu();
+  // }, []);
+  // const fetchMenu = async () => {
+  //   const data = await fetch(MENU_API + resId);
 
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
+  //   let jsonData = await data.json();
+  //   console.log(jsonData);
+  //   setResInfo(jsonData.data);
+  // };
 
-    let jsonData = await data.json();
-    console.log(jsonData);
-    setResInfo(jsonData.data);
-  };
+  // PART: 2 using custom hook useRestaurantMenu to get the data of restaurants( resInfo )
+  const resInfo = useRestaurantMenu(resId);
 
   if (resInfo === null) {
     return <Shimmer />;

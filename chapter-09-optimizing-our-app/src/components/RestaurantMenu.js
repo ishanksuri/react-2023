@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
 
   //Extracting the resId from params
   const { resId } = useParams();
-  console.log(resId);
+  // console.log(resId);
 
   //part1: converting this part of functionality into a custome hook
   //fetchMenu will be called once only after intial render as it has empty dependency array

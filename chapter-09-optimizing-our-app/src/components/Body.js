@@ -4,6 +4,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   //State Variable - Super powerful Variable
@@ -141,6 +142,13 @@ const Body = () => {
     //Initializing filteredRestaurant with orginal(all) restaurants
     setfilteredRestaurant(arrayOfResCards);
   };
+
+  //custome hook 2: useOnlineStatus()- to keep track of online status
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return (
+      <h1>Looks like you're offline!! Please check your internet connection</h1>
+    );
 
   //Conditional Rendering: logic for loading spinner/shimmer UI instead of rendering 2nd return() when listOfRestaurants is empty
   //listOfRestaurants.length === 0 , means the API hasn't responded back

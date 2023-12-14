@@ -2,6 +2,7 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   //simple JS variable
@@ -11,6 +12,9 @@ const Header = () => {
   // console.log(
   //   "checking: It will re-render the whole Header component after clicking Login button"
   // );
+
+  //using custom-hook-2-useOnlineStatus here
+  const onlineStatus = useOnlineStatus();
 
   //Type1
   // if no dependency array, then useEffect is still called on every render
@@ -41,6 +45,7 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
           <li>
             <Link to="/">Home</Link>
           </li>

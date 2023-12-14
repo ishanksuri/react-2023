@@ -7,7 +7,8 @@ npm i react-dom
 npx parcel index.html( dev build )
 npx parcel build index.html( prod build )
 
-#Parcel doing
+# Parcel job
+
 -Dev Build
 -Local Server
 -HMR = Hot Module Replacement( when we save file it automatocally refreses the page)
@@ -29,7 +30,7 @@ npx parcel build index.html( prod build )
 
 # Food Ordering app
 
-/\*\*
+/\*\*\*
 
 - Header
 - - Logo

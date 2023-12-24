@@ -1,4 +1,4 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
@@ -73,4 +73,10 @@
 .user-card {
   padding: 10px;
   border: 1px solid black;
-}
+} */
+
+/* ---------------STARTING TAILWIND FROM HERE------------------- */
+/* IMPORTING TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

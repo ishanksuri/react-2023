@@ -10,4 +10,5 @@ export const LOGO_URL =
   "https://unsplash.com/photos/1CsaVdwfIew/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8Zm9vZCUyQmFwcHxlbnwwfHx8fDE2OTgyOTg2Nzh8MA&force=true&w=640";
 
 export const MENU_API =
-  "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=";
+  // "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=";
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=";

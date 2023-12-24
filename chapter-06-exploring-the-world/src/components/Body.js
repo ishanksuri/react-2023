@@ -186,7 +186,7 @@ const Body = () => {
           onClick={() => {
             console.log("Button Clicked");
             // filter logic
-            const filteredList = listOfRestaurants.filter(
+            const filteredList = filteredRestaurant.filter(
               // (res) => res.data.avgRating > 4
               (res) => res.info.avgRating > 4
             );

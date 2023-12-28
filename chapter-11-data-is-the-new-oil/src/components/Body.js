@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withNewLabel } from "./RestaurantCard";
 // no need of restaurantList as now working with live api data
 // import restaurantList from "../utils/mockData";
 import { useEffect, useState } from "react";
@@ -106,6 +106,9 @@ const Body = () => {
 
   //for input box
   const [searchText, setSearchText] = useState("");
+
+  //Higher Order Component
+  const RestaurantCardNewRestaurant = withNewLabel(RestaurantCard);
 
   //Whenever state variable update, react triggers a reconcialtion cycle ( re-renders the component )
   // console.log(
@@ -235,7 +238,15 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            {/* if isNewlyOnboarded === true */}
+            {restaurant.info.isNewlyOnboarded ? (
+              <RestaurantCardNewRestaurant
+                key={restaurant.info.id}
+                resData={restaurant}
+              />
+            ) : (
+              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

@@ -5,8 +5,15 @@ const RestaurantCard = (props) => {
   // console.log(props);
   const { resData } = props;
   //Destrtucturing
-  const { cloudinaryImageId, name, avgRating, cuisines, costForTwo, sla } =
-    resData?.info;
+  const {
+    cloudinaryImageId,
+    name,
+    avgRating,
+    cuisines,
+    costForTwo,
+    sla,
+    isNewlyOnboarded,
+  } = resData?.info;
 
   return (
     <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
@@ -23,6 +30,24 @@ const RestaurantCard = (props) => {
       <h4>{sla?.deliveryTime} minutes</h4>
     </div>
   );
+};
+
+// Higher Order Component
+// INPUT- RestaurantCard component
+// OUTPUT- generate new enhanced "RestaurantCard" component(which is basically a js function()) with New Restaurant/veg/promoted label on it
+
+export const withNewLabel = (RestaurantCard) => {
+  // its returning component which returns a piece of JSX
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-gray-700 text-white m-2 p-2 rounded-lg">
+          New Restaurant
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

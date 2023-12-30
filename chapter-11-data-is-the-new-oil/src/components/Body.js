@@ -114,7 +114,7 @@ const Body = () => {
   // console.log(
   //   "checking if body will re-render again and agian as we type each letter in input search box"
   // );
-  console.log(listOfRestaurants);
+  // console.log(listOfRestaurants);
 
   // callback function inside the useEffect will be called after the body component render cycle is complete
   useEffect(() => {

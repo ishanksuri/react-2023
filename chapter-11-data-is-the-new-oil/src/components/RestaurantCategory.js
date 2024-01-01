@@ -1,17 +1,21 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Itemlist from "./ItemList";
 
-const RestaurantCategory = ({ data }) => {
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   //   console.log(data);
 
   //by default: false means accordian body is closed. onClick in the header will make it expand
-  const [showItems, setShowItems] = useState(false);
+  //lifting the state up- making RestaurantCatgory.js a CONTROLLED COMPONENT( REMOVING showItems- it doesn't have its own state)
+  // const [showItems, setShowItems] = useState(showItems);
 
   //when we click , this function is responsible for show/hide the accordian body
   const handleClick = () => {
     // console.log("clicked");
-    // if showItems === false {showItems = true }; if showItems === true {showItems = false }
-    setShowItems(!showItems);
+    // if showItems === false the {showItems = true }; if showItems === true {showItems = false }
+    // setShowItems(!showItems);
+
+    //Lifting the state up- advance concept, indirectly using child we can do that, we can pass setShowIndex to the children
+    setShowIndex();
   };
   return (
     <div>

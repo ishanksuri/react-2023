@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   //using state variable to dynamically the data on UI
@@ -37,6 +38,11 @@ const RestaurantMenu = () => {
   // PART: 2 using custom hook useRestaurantMenu to get the data of restaurants( resInfo )
   const resInfo = useRestaurantMenu(resId);
 
+  // whatever the showIndex is, that accordion will be expanded and everything else will remain collapse
+  // const [showIndex, setShowIndex] = useState(0);
+  // If we don't want to expand anything at start, set it to null
+  const [showIndex, setShowIndex] = useState(null);
+
   if (resInfo === null) {
     return <Shimmer />;
   }
@@ -69,10 +75,14 @@ const RestaurantMenu = () => {
         {cuisines.join(", ")} - {costForTwoMessage}{" "}
       </p>
       {/* categories accordion, for each category we want that accordian item */}
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <RestaurantCategory
           key={category?.card?.card?.title}
           data={category?.card?.card}
+          // lifting the state up- controlling RestaurantCatgory( is a CONTROLLED COMPONENT ) via props
+          showItems={index === showIndex ? true : false}
+          // indirectly children is giving updated index & setting it up( when clicked (handleClick in child))
+          setShowIndex={() => setShowIndex(index)}
         />
       ))}
     </div>

@@ -36,6 +36,9 @@ const AppLayout = () => {
   //printing virtual DOM( object ) which is representation of Actual DOM
   // console.log(<Body />);
   return (
+    // this is basically overriding the default values ,
+    // we have tied UserContext with state variable
+    // everytime my state variable changes my UserContext changes
     <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
       <div className="app">
         {/* <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}> */}

@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import Itemlist from "./ItemList";
 
-const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
+const RestaurantCategory = ({ data, showItems, setShowIndex, dummy }) => {
   //   console.log(data);
 
   //by default: false means accordian body is closed. onClick in the header will make it expand
@@ -15,6 +15,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
     // setShowItems(!showItems);
 
     //Lifting the state up- advance concept, indirectly using child we can do that, we can pass setShowIndex to the children
+    //as soon as we click here, it will just change the setShowIndex of its parent according to the click here and all the others will be collapse
     setShowIndex();
   };
   return (
@@ -31,7 +32,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
           <span>⬇️</span>
         </div>
         {/* Accordian Body*/}
-        {showItems && <Itemlist items={data.itemCards} />}
+        {showItems && <Itemlist items={data.itemCards} dummy={dummy} />}
       </div>
     </div>
   );

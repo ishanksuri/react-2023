@@ -69,6 +69,7 @@ Two Types of Export/Import
 otherHooks
 -useRouteError
 -useParams
+-useContext
 
 - 1% of time you'll be using other react hooks
 

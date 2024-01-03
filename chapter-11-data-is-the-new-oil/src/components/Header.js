@@ -1,8 +1,9 @@
 // import foodLogo from "../../Images/food_logo.jpg";
 import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   //simple JS variable
@@ -15,6 +16,10 @@ const Header = () => {
 
   //using custom-hook-2-useOnlineStatus here
   const onlineStatus = useOnlineStatus();
+
+  //React hook- useContext
+  const { loggedInUser } = useContext(UserContext);
+  // console.log(data);
 
   //Type1
   // if no dependency array, then useEffect is still called on every render
@@ -70,6 +75,7 @@ const Header = () => {
           >
             {btnNameReact}
           </button>
+          <li className="px-4 font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>

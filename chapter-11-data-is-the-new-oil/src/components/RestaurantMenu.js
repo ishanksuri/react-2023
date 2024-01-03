@@ -22,6 +22,9 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   // console.log(resId);
 
+  //Prop Drilling - involves passing data from a parent component down to its child components through props, even if those child component( RestaurantCatgory) do not directly use the data but grandchild( ItemList uses it)
+  const dummy = "Dummy Data";
+
   //part1: converting this part of functionality into a custome hook
   //fetchMenu will be called once only after intial render as it has empty dependency array
   // useEffect(() => {
@@ -83,6 +86,7 @@ const RestaurantMenu = () => {
           showItems={index === showIndex ? true : false}
           // indirectly children is giving updated index & setting it up( when clicked (handleClick in child))
           setShowIndex={() => setShowIndex(index)}
+          dummy={dummy}
         />
       ))}
     </div>

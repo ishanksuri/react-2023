@@ -1,7 +1,10 @@
 import { CDN_URL } from "../utils/constants";
 
-const Itemlist = ({ items }) => {
+const Itemlist = ({ items, dummy }) => {
   // console.log(items);
+
+  // props drilling
+  // console.log(dummy);
   return (
     <div>
       {/* parent-div accrodian body  */}

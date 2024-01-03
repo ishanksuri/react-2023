@@ -1,10 +1,11 @@
 import RestaurantCard, { withNewLabel } from "./RestaurantCard";
 // no need of restaurantList as now working with live api data
 // import restaurantList from "../utils/mockData";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   //State Variable - Super powerful Variable
@@ -155,6 +156,9 @@ const Body = () => {
       <h1>Looks like you're offline!! Please check your internet connection</h1>
     );
 
+  // Accessing setUserName in Body.js
+  const { loggedInUser, setUserName } = useContext(UserContext);
+
   //Conditional Rendering: logic for loading spinner/shimmer UI instead of rendering 2nd return() when listOfRestaurants is empty
   //listOfRestaurants.length === 0 , means the API hasn't responded back
   // if (listOfRestaurants.length === 0) {
@@ -214,6 +218,15 @@ const Body = () => {
           >
             Top Rated Restaurant
           </button>
+        </div>
+        {/* UserContext.js data should change- update UserName in app.js from this input box */}
+        <div className="m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
       <div className="flex flex-wrap">

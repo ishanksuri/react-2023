@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import About from "./components/About";
+// import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
@@ -19,6 +19,7 @@ import UserContext from "./utils/UserContext";
 
 //import Grocery in our app by using something called lazy provides to us by react
 const Grocery = lazy(() => import("./components/Grocery"));
+const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   //How to pass and update UseContext information in our app-
@@ -35,11 +36,11 @@ const AppLayout = () => {
   //printing virtual DOM( object ) which is representation of Actual DOM
   // console.log(<Body />);
   return (
-    <UserContext.Provider value={{ loggedInUser: userName }}>
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
       <div className="app">
-        <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}>
-          <Header />
-        </UserContext.Provider>
+        {/* <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}> */}
+        <Header />
+        {/* </UserContext.Provider> */}
 
         {/* part3- header is always on top & body will keep on changing acc to the routes */}
         <Outlet />
@@ -61,7 +62,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",

@@ -40,6 +40,7 @@ class About extends React.Component {
         <h1>About Class Component</h1>
         <div>
           LoggedIn User
+          {/* can use this multiple times as well  */}
           <UserContext.Consumer>
             {({ loggedInUser }) => (
               <h1 className="text-xl font-bold">{loggedInUser}</h1>

@@ -1,6 +1,7 @@
 import User from "./User";
 import UserClass from "./UserClass";
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 //class based About.js component
 class About extends React.Component {
@@ -33,12 +34,20 @@ class About extends React.Component {
   }
 
   render() {
-    console.log("Parent Render()");
+    // console.log("Parent Render()");
     return (
       <div>
-        <h1>About</h1>
+        <h1>About Class Component</h1>
+        <div>
+          LoggedIn User
+          <UserContext.Consumer>
+            {({ loggedInUser }) => (
+              <h1 className="text-xl font-bold">{loggedInUser}</h1>
+            )}
+          </UserContext.Consumer>
+        </div>
         <h2>This is About Component</h2>
-        <User name={"Akshay Saini (function)"} />
+        {/* <User name={"Akshay Saini (function)"} /> */}
 
         {/* <UserClass name={"First "} location={"Saharanpur (class)"} /> */}
         {/* <UserClass name={"Second "} location={"Doon (class)"} /> */}

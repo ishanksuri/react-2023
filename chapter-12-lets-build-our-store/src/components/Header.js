@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   //simple JS variable
@@ -20,6 +21,13 @@ const Header = () => {
   //React hook- useContext
   const { loggedInUser } = useContext(UserContext);
   // console.log(data);
+
+  //Subscribing to the store using a Selector
+  //Selector- is a hook inside react, comes from react-redux library
+  //useSelector gives us access to the whole store
+  // but we just want to subscribe to the small portion(cart slice) of the store that is store.cart.items
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   //Type1
   // if no dependency array, then useEffect is still called on every render
@@ -63,7 +71,9 @@ const Header = () => {
           <li className="px-4">
             <Link to="/Grocery">Grocery</Link>
           </li>
-          <li className="px-4">Cart</li>
+          <li className="px-4 font-bold text-xl">
+            Cart -({cartItems.length} items)
+          </li>
           <button
             className="login"
             onClick={() => {

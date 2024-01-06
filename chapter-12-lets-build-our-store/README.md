@@ -7,6 +7,9 @@ npm i react-dom
 npx parcel index.html( dev build )
 npx parcel build index.html( prod build )
 
+npm install @reduxjs/toolkit
+npm install react-redux
+
 # Parcel job
 
 -Dev Build
@@ -77,3 +80,13 @@ otherHooks
 
 -Client side routing
 -Server Side Routing
+
+# Redux Toolkit
+
+- Install two libraries 1. @reduxjs/toolkit and 2. react-redux
+- npm i @reduxjs/toolkit
+- Build our store
+- Connect our store to our app
+- create Slice (cartSlice)
+- dispatch( action )
+- Selector

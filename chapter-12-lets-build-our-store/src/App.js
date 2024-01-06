@@ -9,6 +9,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // import Grocery from "./components/Grocery";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 // chunking
 // code splitting
@@ -28,7 +30,7 @@ const AppLayout = () => {
   useEffect(() => {
     //Assume we have made an API call to send username and password
     const data = {
-      name: "Ishank updated value",
+      name: "Ishank",
     };
     setUserName(data.name);
   }, []);
@@ -36,19 +38,21 @@ const AppLayout = () => {
   //printing virtual DOM( object ) which is representation of Actual DOM
   // console.log(<Body />);
   return (
-    // this is basically overriding the default values ,
+    <Provider store={appStore}>
+      {/* // this is basically overriding the default values ,
     // we have tied UserContext with state variable
-    // everytime my state variable changes my UserContext changes
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        {/* <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}> */}
-        <Header />
-        {/* </UserContext.Provider> */}
+    // everytime my state variable changes my UserContext changes */}
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          {/* <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}> */}
+          <Header />
+          {/* </UserContext.Provider> */}
 
-        {/* part3- header is always on top & body will keep on changing acc to the routes */}
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+          {/* part3- header is always on top & body will keep on changing acc to the routes */}
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 

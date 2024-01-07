@@ -11,10 +11,12 @@ const Itemlist = ({ items, dummy }) => {
   const dispatch = useDispatch();
 
   //redux- dispatching an action after click on the button
-  const handleAddItem = () => {
+  const handleAddItem = (item) => {
     //Dispatch an action
     // "pizaah" is equal to action.payload
-    dispatch(addItem("pizzaah"));
+    // dispatch(addItem("pizzaah"));
+    // item- is a big object
+    dispatch(addItem(item));
   };
   return (
     <div>
@@ -42,7 +44,7 @@ const Itemlist = ({ items, dummy }) => {
             <div className="absolute">
               <button
                 className="p-2 mx-5 rounded-lg bg-gray-700 text-white shadow-lg"
-                onClick={handleAddItem}
+                onClick={() => handleAddItem(item)}
               >
                 Add +
               </button>

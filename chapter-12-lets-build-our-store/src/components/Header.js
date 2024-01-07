@@ -22,7 +22,7 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
   // console.log(data);
 
-  //Subscribing to the store using a Selector
+  //Subscribing to the store using a Selector- READ DATA
   //Selector- is a hook inside react, comes from react-redux library
   //useSelector gives us access to the whole store
   // but we just want to subscribe to the small portion(cart slice) of the store that is store.cart.items

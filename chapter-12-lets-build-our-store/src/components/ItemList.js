@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constants";
 
 const Itemlist = ({ items, dummy }) => {
@@ -5,6 +7,15 @@ const Itemlist = ({ items, dummy }) => {
 
   // props drilling
   // console.log(dummy);
+
+  const dispatch = useDispatch();
+
+  //redux- dispatching an action after click on the button
+  const handleAddItem = () => {
+    //Dispatch an action
+    // "pizaah" is equal to action.payload
+    dispatch(addItem("pizzaah"));
+  };
   return (
     <div>
       {/* parent-div accrodian body  */}
@@ -29,7 +40,10 @@ const Itemlist = ({ items, dummy }) => {
           {/* image */}
           <div className="w-3/12 p-4">
             <div className="absolute">
-              <button className="p-2 mx-5 rounded-lg bg-gray-700 text-white shadow-lg">
+              <button
+                className="p-2 mx-5 rounded-lg bg-gray-700 text-white shadow-lg"
+                onClick={handleAddItem}
+              >
                 Add +
               </button>
             </div>

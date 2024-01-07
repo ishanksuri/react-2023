@@ -16,6 +16,7 @@ const Itemlist = ({ items, dummy }) => {
     // "pizaah" is equal to action.payload
     // dispatch(addItem("pizzaah"));
     // item- is a big object
+    //item is equal to action.payload
     dispatch(addItem(item));
   };
   return (

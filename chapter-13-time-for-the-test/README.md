@@ -10,6 +10,11 @@ npx parcel build index.html( prod build )
 npm install @reduxjs/toolkit
 npm install react-redux
 
+npm i -D @testing-library/react
+npm i -D jest
+npm install --save-dev babel-jest @babel/core @babel/preset-env
+npm install --save-dev jest-environment-jsdom
+
 # Parcel job
 
 -Dev Build
@@ -90,3 +95,19 @@ otherHooks
 - create Slice (cartSlice)
 - dispatch( action )
 - Selector
+
+# Types of testing( a developer can do in writing test cases)
+
+- Unit testing
+- Integration Testing
+- End to End Testing- e2e testing
+
+# Setting up testing in our app
+
+- npm i -D @testing-library/react
+- npm i -D jest
+- npm install --save-dev babel-jest @babel/core @babel/preset-env
+- configure babel: Create babel.config.js and copy paste some code here
+- configure Parcel config file to disable default babel transpilation - ie create .parcelrc ( from parceldocs- JS- babel- usage with other tools )
+- Jest configuration, Initializing the jest ( npx jest --init)
+- Install jsdom library- npm install --save-dev jest-environment-jsdom

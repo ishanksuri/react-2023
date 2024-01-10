@@ -6,8 +6,11 @@ export const CDN_URL =
 // export const LOGO_URL =
 //   "https://unsplash.com/photos/hWc_DKCietQ/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8N3x8YnVyZ2VyJTIwbG9nb3xlbnwwfHx8fDE2OTYwOTY1NTB8MA&force=true";
 
+// export const LOGO_URL =
+//   "https://unsplash.com/photos/1CsaVdwfIew/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8Zm9vZCUyQmFwcHxlbnwwfHx8fDE2OTgyOTg2Nzh8MA&force=true&w=640";
+
 export const LOGO_URL =
-  "https://unsplash.com/photos/1CsaVdwfIew/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8Zm9vZCUyQmFwcHxlbnwwfHx8fDE2OTgyOTg2Nzh8MA&force=true&w=640";
+  "https://unsplash.com/photos/OlXUUQedQyM/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8dG9tYXRvfGVufDB8MHx8fDE3MDQ3MzQ5Nzh8MA&force=true";
 
 export const MENU_API =
   // "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=";

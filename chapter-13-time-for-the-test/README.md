@@ -14,6 +14,8 @@ npm i -D @testing-library/react
 npm i -D jest
 npm install --save-dev babel-jest @babel/core @babel/preset-env
 npm install --save-dev jest-environment-jsdom
+npm i -D @babel/preset-react
+npm i -D @testing-library/jest-dom
 
 # Parcel job
 
@@ -111,3 +113,6 @@ otherHooks
 - configure Parcel config file to disable default babel transpilation - ie create .parcelrc ( from parceldocs- JS- babel- usage with other tools )
 - Jest configuration, Initializing the jest ( npx jest --init)
 - Install jsdom library- npm install --save-dev jest-environment-jsdom
+- Install- npm i -D @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside my babel
+- Install- npm i -D @testing-library/jest-dom

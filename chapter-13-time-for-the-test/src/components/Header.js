@@ -27,7 +27,7 @@ const Header = () => {
   //useSelector gives us access to the whole store
   // but we just want to subscribe to the small portion(cart slice) of the store that is store.cart.items
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   //Type1
   // if no dependency array, then useEffect is still called on every render

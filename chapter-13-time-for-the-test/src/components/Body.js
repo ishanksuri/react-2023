@@ -135,12 +135,12 @@ const Body = () => {
     let resJsonData = await data.json();
     // console.log(resJsonData);
     // console.log(
-    //   resJsonData.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
+    //   resJsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     // );
     let arrayOfResCards = [];
     arrayOfResCards =
       //optional chaining
-      resJsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+      resJsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     // console.log(arrayOfResCards);
     //Whenever state variable update, react triggers a reconciliation cycle ( re-renders the component )

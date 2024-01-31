@@ -133,7 +133,7 @@ const Body = () => {
     );
 
     let resJsonData = await data.json();
-    // console.log(resJsonData);
+    console.log(resJsonData);
     // console.log(
     //   resJsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     // );
@@ -180,6 +180,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
+            data-testid="searchInput"
             className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
@@ -255,10 +256,13 @@ const Body = () => {
             {restaurant.info.isNewlyOnboarded ? (
               <RestaurantCardNewRestaurant
                 key={restaurant.info.id}
-                resData={restaurant}
+                resData={restaurant?.info}
               />
             ) : (
-              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+              <RestaurantCard
+                key={restaurant.info.id}
+                resData={restaurant?.info}
+              />
             )}
           </Link>
         ))}

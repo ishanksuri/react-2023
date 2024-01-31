@@ -1,0 +1,65 @@
+{
+  "id": "772202",
+  "name": "Starbucks Coffee",
+  "cloudinaryImageId": "182191ab163770437b62861a6f987709",
+  "locality": "Reserve Bank Enclave",
+  "areaName": "Paschim Vihar",
+  "costForTwo": "₹400 for two",
+  "cuisines": [
+    "Beverages",
+    "Cafe",
+    "Snacks",
+    "Desserts",
+    "Bakery",
+    "Ice Cream"
+  ],
+  "avgRating": 4.4,
+  "parentId": "195515",
+  "avgRatingString": "4.4",
+  "totalRatingsString": "100+",
+  "sla": {
+    "deliveryTime": 35,
+    "lastMileTravel": 4.8,
+    "serviceability": "SERVICEABLE",
+    "slaString": "35 mins",
+    "lastMileTravelString": "4.8 km",
+    "iconType": "ICON_TYPE_EMPTY"
+  },
+  "availability": {
+    "nextCloseTime": "2024-01-20 23:00:00",
+    "opened": true
+  },
+  "badges": {},
+  "isOpen": true,
+  "type": "F",
+  "badgesV2": {
+    "entityBadges": {
+      "imageBased": {},
+      "textBased": {},
+      "textExtendedBadges": {}
+    }
+  },
+  "aggregatedDiscountInfoV3": {
+    "header": "₹120 OFF",
+    "subHeader": "ABOVE ₹199",
+    "discountTag": "FLAT DEAL"
+  },
+  "orderabilityCommunication": {
+    "title": {},
+    "subTitle": {},
+    "message": {},
+    "customIcon": {}
+  },
+  "differentiatedUi": {
+    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    "differentiatedUiMediaDetails": {
+      "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+      "lottie": {},
+      "video": {}
+    }
+  },
+  "reviewsSummary": {},
+  "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  "isNewlyOnboarded": true,
+  "restaurantOfferPresentationInfo": {}
+}

@@ -6,6 +6,7 @@ npm install react
 npm i react-dom
 npx parcel index.html( dev build )
 npx parcel build index.html( prod build )
+npm run watch-test ( adding "watch-test": "jest --watch" in package.json)
 
 npm install @reduxjs/toolkit
 npm install react-redux

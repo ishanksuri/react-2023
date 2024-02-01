@@ -134,9 +134,9 @@ const Body = () => {
 
     let resJsonData = await data.json();
     console.log(resJsonData);
-    // console.log(
-    //   resJsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    // );
+    console.log(
+      resJsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
     let arrayOfResCards = [];
     arrayOfResCards =
       //optional chaining

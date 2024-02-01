@@ -42,3 +42,26 @@ it("Should search Res List for pizza text input", async () => {
 
   expect(cardsAfterSearch.length).toBe(2);
 });
+
+it("Should filter Top Rated Restaurant", async () => {
+  await act(async () => {
+    render(
+      // wrapping browser router because it can't find link
+      <BrowserRouter>
+        <Body />
+      </BrowserRouter>
+    );
+  });
+
+  const cardsBeforeFilter = screen.getAllByTestId("resCard");
+  //initially cards are 9 when the screen loads
+  expect(cardsBeforeFilter.length).toBe(9);
+
+  const topRatedButton = screen.getByRole("button", {
+    name: "Top Rated Restaurant",
+  });
+  fireEvent.click(topRatedButton);
+
+  const cardsAfterFilter = screen.getAllByTestId("resCard");
+  expect(cardsAfterFilter.length).toBe(7);
+});

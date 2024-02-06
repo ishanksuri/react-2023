@@ -3,6 +3,26 @@ import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
 describe("Contact Us page Test Case", () => {
+  //it will run this function before all the test
+  beforeAll(() => {
+    console.log("Before All");
+  });
+
+  //it will run this function before each test case
+  beforeEach(() => {
+    console.log("Before Each");
+  });
+
+  //it will run this function before each test case
+  afterEach(() => {
+    console.log("After Each");
+  });
+
+  //it will run this function after all the test cases are completed
+  afterAll(() => {
+    console.log("After All");
+  });
+
   test("Should load contact us component on DOM", () => {
     // contact component rendered on DOM screen
     render(<Contact />);
@@ -59,7 +79,7 @@ describe("Contact Us page Test Case", () => {
     //the role for input boxes is textbox
     const inputBoxes = screen.getAllByRole("textbox");
     //   console.log(inputBoxes[0]);
-    console.log(inputBoxes.length);
+    // console.log(inputBoxes.length);
 
     //Assertion
     expect(inputBoxes.length).toBe(2);

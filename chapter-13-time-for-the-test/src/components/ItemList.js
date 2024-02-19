@@ -24,6 +24,7 @@ const Itemlist = ({ items, dummy }) => {
       {/* parent-div accrodian body  */}
       {items.map((item) => (
         <div
+          data-testid="foodItems"
           key={item.card.info.id}
           className="p-2 m-2 border-b-2 border-gray-200 text-left flex justify-between"
         >
